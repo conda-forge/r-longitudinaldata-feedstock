@@ -13,9 +13,9 @@ source:
   sha256: 6d8b155726b5e1913711c84af3e0fc56bb3a1097e0471628572b88239f63db52
 
 build:
-  skip: True  # [osx]
   merge_build_host: True  # [win]
-  number: 1
+  number: 2
+  noarch: generic
   rpaths:
     - lib/R/lib/
     - lib/
@@ -28,22 +28,23 @@ requirements:
     - {{ cdt('libselinux') }}  # [linux]
     - {{ cdt('libxdamage') }}  # [linux]
     - {{ cdt('libxxf86vm') }}  # [linux]
+    - xorg-libxfixes           # [linux]
   host:
     - r-base
     - r-class
     - r-clv
     - r-misc3d
     - r-rgl
-    - xorg-libxfixes  # [linux]
   run:
     - r-base
     - r-class
     - r-clv
     - r-misc3d
     - r-rgl
-    - xorg-libxfixes  # [linux]
 
 test:
+  requires:
+    - xorg-libxfixes  # [linux]
   commands:
     - LD_LIBRARY_PATH=${BUILD_PREFIX}/x86_64-conda_cos6-linux-gnu/sysroot/usr/lib64 $R -e "library('longitudinalData')"           # [not win]
     - "\"%R%\" -e \"library('longitudinalData')\""  # [win]
