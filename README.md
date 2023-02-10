@@ -1,9 +1,9 @@
 About r-longitudinaldata
 ========================
 
-Home: http:www.r-project.org
+Home: https://cran.r-project.org/package=longitudinalData
 
-Package license: GPL (>= 2)
+Package license: GPL-2.0-or-later
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-longitudinaldata-feedstock/blob/main/LICENSE.txt)
 
