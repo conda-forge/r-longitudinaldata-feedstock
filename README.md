@@ -1,11 +1,11 @@
-About r-longitudinaldata
-========================
+About r-longitudinaldata-feedstock
+==================================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-longitudinaldata-feedstock/blob/main/LICENSE.txt)
 
 Home: https://cran.r-project.org/package=longitudinalData
 
 Package license: GPL-2.0-or-later
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-longitudinaldata-feedstock/blob/main/LICENSE.txt)
 
 Summary: Tools for longitudinal data and joint longitudinal data (used by packages kml and kml3d).
 
