@@ -1,4 +1,4 @@
-{% set version = "2.4.5" %}
+{% set version = "2.4.5.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/longitudinalData_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/longitudinalData/longitudinalData_{{ version }}.tar.gz
-  sha256: e4bede523d45e706a4c362a74ffe1cbf2798fce0fef0184fd0827f13dbaf4e9a
+  sha256: b5b01753e56129ae30e8dcc47e06fcf7e3bc7bdc3060eb018f49d358a914f6f4
 
 build:
   merge_build_host: true  # [win]
-  number: 1
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
