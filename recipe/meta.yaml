@@ -12,7 +12,7 @@ source:
   sha256: 0cb66260e0171ba8fb31f30ed7609e726ae1187fce8c09aed25ec0ca7c524a8b
 
 build:
-  number: 1
+  number: 2
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -21,11 +21,6 @@ build:
 requirements:
   build:
     - {{ posix }}zip               # [win]
-    - {{ cdt('mesa-libgl-devel') }}  # [linux]
-    - {{ cdt('mesa-dri-drivers') }}  # [linux]
-    - {{ cdt('libselinux') }}  # [linux]
-    - {{ cdt('libxdamage') }}  # [linux]
-    - {{ cdt('libxxf86vm') }}  # [linux]
     - xorg-libxfixes           # [linux]
   host:
     - r-base
@@ -33,6 +28,7 @@ requirements:
     - r-clv
     - r-misc3d
     - r-rgl
+    - libgl-devel                    # [linux]
   run:
     - r-base
     - r-class
