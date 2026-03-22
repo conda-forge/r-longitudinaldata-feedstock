@@ -12,7 +12,7 @@ source:
   sha256: 0cb66260e0171ba8fb31f30ed7609e726ae1187fce8c09aed25ec0ca7c524a8b
 
 build:
-  number: 1
+  number: 2
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -21,12 +21,6 @@ build:
 requirements:
   build:
     - {{ posix }}zip               # [win]
-    - {{ cdt('mesa-libgl-devel') }}  # [linux]
-    - {{ cdt('mesa-dri-drivers') }}  # [linux]
-    - {{ cdt('libselinux') }}  # [linux]
-    - {{ cdt('libxdamage') }}  # [linux]
-    - {{ cdt('libxxf86vm') }}  # [linux]
-    - xorg-libxfixes           # [linux]
   host:
     - r-base
     - r-class
@@ -41,10 +35,8 @@ requirements:
     - r-rgl
 
 test:
-  requires:
-    - xorg-libxfixes  # [linux]
   commands:
-    - LD_LIBRARY_PATH=${BUILD_PREFIX}/x86_64-conda-linux-gnu/sysroot/usr/lib64:${BUILD_PREFIX}/lib $R -e "library('longitudinalData')"  # [not win]
+    - $R -e "library('longitudinalData')"  # [not win]
     - "\"%R%\" -e \"library('longitudinalData')\""  # [win]
 
 about:
