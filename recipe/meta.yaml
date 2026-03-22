@@ -21,14 +21,12 @@ build:
 requirements:
   build:
     - {{ posix }}zip               # [win]
-    - xorg-libxfixes           # [linux]
   host:
     - r-base
     - r-class
     - r-clv
     - r-misc3d
     - r-rgl
-    - libgl-devel                    # [linux]
   run:
     - r-base
     - r-class
@@ -37,10 +35,8 @@ requirements:
     - r-rgl
 
 test:
-  requires:
-    - xorg-libxfixes  # [linux]
   commands:
-    - LD_LIBRARY_PATH=${BUILD_PREFIX}/x86_64-conda-linux-gnu/sysroot/usr/lib64:${BUILD_PREFIX}/lib $R -e "library('longitudinalData')"  # [not win]
+    - $R -e "library('longitudinalData')"  # [not win]
     - "\"%R%\" -e \"library('longitudinalData')\""  # [win]
 
 about:
